@@ -1,22 +1,22 @@
-// 'use strict';
+'use strict';
 
-// // import coffee from '../src/models/coffee';
+import profile from '../src/models/profile';
 
-// export default (dir) => {
+export default (dir) => {
 
-//   const fakeMongo = {
-//     find: () => Promise.resolve([]),
-//     findById: () => Promise.resolve({}),
-//     save: data => Promise.resolve(data),
-//     findByIdAndUpdate: () => Promise.resolve({}),
-//     findByIdAndDelete: () => Promise.resolve({}),
-//   };
+  const fakeMongo = {
+    find: () => Promise.resolve([]),
+    findById: () => Promise.resolve({}),
+    save: data => Promise.resolve(data),
+    findByIdAndUpdate: () => Promise.resolve({}),
+    findByIdAndDelete: () => Promise.resolve({}),
+  };
 
-//   if(typeof dir !== 'string') {
-//     return {};
-//   }
-//   return {
-//     'foo': {default: fakeMongo},
-//     'coffee': {default: coffee},
-//   };
-// };
+  if(typeof dir !== 'string') {
+    return {};
+  }
+  return {
+    'foo': {default: fakeMongo},
+    'profile': {default: profile},
+  };
+};
